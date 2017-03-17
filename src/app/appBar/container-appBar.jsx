@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { ToolbarGroup, Toolbar, ToolbarTitle } from 'material-ui';
 
-const AppBar = props => {
+const AppBar = (props) => {
   const {
     value,
     onChangeFunc,
@@ -13,12 +13,12 @@ const AppBar = props => {
     <div style={{ width: '100%', marginTop: '10px' }}>
       <Toolbar style={{ backgroundColor: '#003366' }}>
         <ToolbarGroup firstChild>
-          <ToolbarTitle text="Judy Lin" style={{ color: '#ffffff', fontSize: '24px', padding: '0 15px' }}/>
+          <ToolbarTitle text="Judy Lin" style={{ color: '#ffffff', fontSize: '24px', padding: '0 15px' }} />
         </ToolbarGroup>
         <ToolbarGroup>
-          <ToolbarTitle text="About" style={genericTextStyle}/>
-          <ToolbarTitle text="Projects" style={genericTextStyle}/>
-          <ToolbarTitle text="Contact" style={genericTextStyle}/>
+          <ToolbarTitle text="About" style={genericTextStyle} />
+          <ToolbarTitle text="Projects" style={genericTextStyle} />
+          <ToolbarTitle text="Contact" style={genericTextStyle} />
         </ToolbarGroup>
       </Toolbar>
     </div>

@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from './reducers';
 import thunk from 'redux-thunk';
+import rootReducer from './reducers';
 
 const finalCreateStore = compose(
   // Middleware you want to use in production:
@@ -14,7 +14,7 @@ export default function configureStore(initialState) {
   // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
   if (module.hot) {
     module.hot.accept('./reducers', () =>
-      store.replaceReducer(require('./reducers'))
+      store.replaceReducer(require('./reducers')),
     );
   }
 

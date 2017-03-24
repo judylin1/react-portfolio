@@ -1,11 +1,23 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { ToolbarGroup, Toolbar, ToolbarTitle } from 'material-ui';
+const Scroll = require('react-scroll');
+const Link = Scroll.Link;
 
-const AppBar = (props) => {
-  const {
-    value,
-    onChangeFunc,
-  } = props;
+const AppBar = () => {
+  const toolbarText = [
+    {
+      text: 'About',
+      jumpTo: 'aboutSection',
+    },
+    {
+      text: 'Projects',
+      jumpTo: 'projectsSection',
+    },
+    {
+      text: 'Contact',
+      jumpTo: 'contactSection',
+    },
+  ];
 
   const genericTextStyle = { color: '#ffffff', fontSize: '16px', padding: '0 15px' };
 
@@ -16,18 +28,17 @@ const AppBar = (props) => {
           <ToolbarTitle text="Judy Lin" style={{ color: '#ffffff', fontSize: '24px', padding: '0 15px' }} />
         </ToolbarGroup>
         <ToolbarGroup>
-          <ToolbarTitle text="About" style={genericTextStyle} />
-          <ToolbarTitle text="Projects" style={genericTextStyle} />
-          <ToolbarTitle text="Contact" style={genericTextStyle} />
+          {
+            toolbarText.map(header => (
+              <Link key={header.text} activeClass="active" to={header.jumpTo} spy smooth duration={500}>
+                <ToolbarTitle text={header.text} style={genericTextStyle} />
+              </Link>
+            ))
+          }
         </ToolbarGroup>
       </Toolbar>
     </div>
   );
-};
-
-AppBar.propTypes = {
-  value: PropTypes.string,
-  onChangeFunc: PropTypes.func,
 };
 
 export default AppBar;

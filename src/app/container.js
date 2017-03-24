@@ -5,6 +5,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { deepOrange500 } from 'material-ui/styles/colors';
 import { updatePortfolioProps } from '../store/actions';
 import AppBarContainer from './appBar/container-appBar';
+import About from './about';
+import Contact from './contact';
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -27,6 +29,8 @@ const Main = (props) => {
         <AppBarContainer
           {...sharedProps}
         />
+        <About />
+        <Contact />
       </div>
     </MuiThemeProvider>
   );
